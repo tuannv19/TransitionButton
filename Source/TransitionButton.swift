@@ -57,8 +57,14 @@ public enum StopAnimationStyle {
         return spiner
     }()
     
-    private var cachedTitle: String?
-    private var cachedImage: UIImage?
+    public var lineWidth : CGFloat = 1{
+        didSet {
+            spiner.lineWidth = lineWidth
+        }
+    }
+    
+    public var cachedTitle: String?
+    public var cachedImage: UIImage?
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: .linear)
