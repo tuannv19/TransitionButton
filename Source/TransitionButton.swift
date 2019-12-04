@@ -44,10 +44,11 @@ public enum StopAnimationStyle {
     }
     
     /// the corner radius value to have a button with rounded corners.
-    @IBInspectable open var cornerRadius: CGFloat = 0 {
+    /// change  cornerRadius to mcornerRadius cause it conflix with current config
+    @IBInspectable open var mcornerRadius: CGFloat = 0 {
         didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
+            layer.cornerRadius = mcornerRadius
+            layer.masksToBounds = mcornerRadius > 0
         }
     }
     
@@ -175,7 +176,7 @@ public enum StopAnimationStyle {
         self.setTitle(self.cachedTitle, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
         self.isUserInteractionEnabled = true // enable again the user interaction
-        self.layer.cornerRadius = self.cornerRadius
+        self.layer.cornerRadius = self.mcornerRadius
     }
  
     private func animateToOriginalWidth(completion:(()->Void)?) {
